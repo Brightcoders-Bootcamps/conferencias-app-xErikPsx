@@ -1,18 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import {StyleSheet, View, Text, StatusBar} from 'react-native';
-
+import React, {Fragment, useEffect} from 'react';
+import {StyleSheet, View, Text, StatusBar, Platform} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <StatusBar style={styles.welcome} barStyle="light-content" />
+      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
       <Text style={styles.welcome}>App Conferencias.</Text>
     </View>
   );
