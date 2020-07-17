@@ -5,10 +5,7 @@ function HomeScreen(navigation) {
   return (
     <View>
       <StatusBar style={styles.welcome} barStyle="light-content" />
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
+
       <Text style={styles.welcome}>App Conferencias Navigation.</Text>
     </View>
   );

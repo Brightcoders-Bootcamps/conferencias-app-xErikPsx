@@ -17,7 +17,7 @@ import LoginScreen from './src/screens/LoginScreen';
 
 function DetailScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View>
       <Button
         title="Go to Details"
         onPress={() => navigation.push('Details')}
@@ -32,13 +32,29 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#FD6572',
+          },
+          headerTintColor: '#fff',
+        }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen
           style={styles.welcome}
           name="Home"
           component={HomeScreen}
-          options={{title: 'My Home'}}
+          options={{
+            title: 'My Home',
+            headerRight: () => (
+              <Button
+                onPress={() => alert('Testing button')}
+                title="+"
+                color="#ff3f4f"
+              />
+            ),
+          }}
         />
         <Stack.Screen style={styles} name="Details" component={DetailScreen} />
       </Stack.Navigator>

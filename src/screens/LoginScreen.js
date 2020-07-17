@@ -5,7 +5,11 @@ const LoginScreen = ({navigation}) => {
   return (
     <View>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-      <Text style={styles.container}>LOGIN SCREEN</Text>
+      <Text>LOGIN SCREEN</Text>
+      <Button
+        title="Update the title"
+        onPress={() => navigation.setOptions({title: 'Updated'})}
+      />
     </View>
   );
 };
@@ -15,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '20',
+    fontSize: 20,
   },
 });
 
